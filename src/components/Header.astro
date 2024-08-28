@@ -1,28 +1,28 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro"
+import ThemeToggle from "./ThemeToggle.astro";
 
 const navItems = [
   {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
+    title: "Experience",
+    label: "experience",
+    url: "/#experience",
   },
   {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
+    title: "Projects",
+    label: "projects",
+    url: "/#projects",
   },
   {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
+    title: "About me",
+    label: "about-me",
+    url: "/#about-me",
   },
   {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:miduga@gmail.com",
+    title: "Contact",
+    label: "contact",
+    url: "mailto:yordis.monte@gmail.com",
   },
-]
+];
 ---
 
 <header
@@ -34,7 +34,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
           aria-label={link.label}
           href={link.url}
         >
@@ -48,56 +48,63 @@ const navItems = [
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500")
+              item.classList.add("text-blue-500");
             } else {
-              item.classList.remove("text-yellow-500")
+              item.classList.remove("text-blue-500");
             }
-          })
+          });
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
       rootMargin: "0px",
       threshold: 0.3,
-    })
+    });
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
-        observer.disconnect()
+        observer.disconnect();
       } else {
         sections.forEach((section) => {
-          observer.observe(section)
-        })
+          observer.observe(section);
+        });
       }
-    }
-  })
+    };
+  });
 </script>
 
 <style>
   nav {
-    animation: nav-shadown 1s linear both;
+    animation: nav-shadow 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
   }
 
-  @keyframes nav-shadown {
+  nav {
+    @apply dark:bg-gray-800/90 bg-white/50;
+  }
+
+  @keyframes nav-shadow {
+    0% {
+      @apply dark:bg-gray-800/0 bg-white/0;
+    }
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
     }
   }
 </style>

@@ -7,9 +7,10 @@ interface Props {
   description: string;
   link?: string;
   date: string;
+  technologies: string;
 }
 
-const { title, company, description, link, date } = Astro.props;
+const { title, company, description, link, date, technologies } = Astro.props;
 ---
 
 <div
@@ -35,9 +36,16 @@ const { title, company, description, link, date } = Astro.props;
   >
     {description}
     {
+      technologies && (
+        <p class="text-sm text-gray-600/80 dark:text-white/80">
+          <strong>Technologies:</strong> {technologies}
+        </p>
+      )
+    }
+    {
       link && (
         <LinkInline href={link}>
-          Know more{" "}
+          Web Site{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 icon icon-tabler icon-tabler-chevron-right"

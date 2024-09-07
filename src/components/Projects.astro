@@ -2,6 +2,11 @@
 import GitHub from "./icons/GitHub.astro";
 import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
+import Html5 from "./icons/Html5.astro";
+import Javascript from "./icons/Javascript.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import CSS3 from "./icons/CSS3.astro";
+import Wordpress from "./icons/Wordpress.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
@@ -16,32 +21,57 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  WORDPRESS: {
+    name: "Wordpress",
+    class: "bg-gray-200 font-bold text-gray-800",
+    icon: Wordpress,
+  },
+  HTML5: {
+    name: "HTML5",
+    class: "bg-[#003159] text-white",
+    icon: Html5,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-gray-200 font-bold text-gray-800",
+    icon: Bootstrap,
+  },
+  CSS3: {
+    name: "CSS3",
+    class: "bg-[#003159] text-white",
+    icon: CSS3,
+  },
+  JS: {
+    name: "Javascript",
+    class: "bg-[#003159] text-white",
+    icon: Javascript,
+  },
 };
 const PROJECTS = [
   {
-    title: "Chemisweb Studio - Online Web IDE",
+    title: "Chemisweb Studio",
     description:
-      "Web IDE with an integration of web components libraries, CSS frameworks and Javascript utilities.",
+      "Online Web IDE with an integration of web-components libraries, CSS frameworks and Javascript utilities.",
     link: "http://web.archive.org/web/20230325145007/https://chemisweb.com/",
-    github: "https://github.com/pheralb/svgl",
+    github: "https://github.com/tcosCode",
     image: "/projects/chemisweb.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.HTML5, TAGS.BOOTSTRAP, TAGS.JS],
   },
   {
-    title: "Decoders Tool - Unlocker Android Tool",
+    title: "Decoders Tool",
     description:
-      "Web application for the software DecodersTool, which allow unlock and repair several Android phone devices.",
+      "Web-based application for unlocking and repairing Android devices, integrating with various device management protocols.",
     link: "http://web.archive.org/web/20211203170345/https://www.decoders-tool.com/abstruseness/",
     image: "/projects/decoderstool.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.HTML5, TAGS.CSS3, TAGS.JS],
   },
   {
-    title: "Marrero - E-commerce online",
+    title: "Marrero",
     description:
-      "E-commerce platform developed with Wordpress, PHP and CSS, with Google Analitics and Stripe integration.",
+      "E-commerce platform developed with Wordpress, Woo-commerce and CSS, with multiple integrations such as Google Analytics and Stripe.",
     link: "http://web.archive.org/web/20240205120144/https://marrero.one/",
     image: "/projects/marrero.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.WORDPRESS],
   },
 ];
 ---

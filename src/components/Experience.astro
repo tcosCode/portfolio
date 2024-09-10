@@ -34,20 +34,18 @@ const EXPERIENCE = [
 ];
 ---
 
-<div>
-  <ol class="relative mt-16">
-    {
-      EXPERIENCE.map((experience) => (
-        <li class="">
-          <ExperienceItem {...experience} />
-        </li>
-      ))
-    }
-  </ol>
-  <div class="ml-10">
-    <LinkButton href={RESUME_LINK}>
-      <Resume class="size-6" />
-      Download resume
-    </LinkButton>
-  </div>
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
+<div class="ml-10">
+  <LinkButton href={RESUME_LINK}>
+    <Resume class="size-6" />
+    Download resume
+  </LinkButton>
 </div>

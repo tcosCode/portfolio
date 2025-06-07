@@ -8,9 +8,15 @@ import Bootstrap from "./icons/Bootstrap.astro";
 import CSS3 from "./icons/CSS3.astro";
 import Wordpress from "./icons/Wordpress.astro";
 import Link from "./icons/Link.astro";
+import AstroIcon from "./icons/AstroFramework.astro";
 import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
+  ASTRO: {
+    name: "Astro",
+    class: "bg-black text-white border dark:border-gray-600",
+    icon: AstroIcon,
+  },
   NEXT: {
     name: "Next.js",
     class: "bg-black text-white border dark:border-gray-600",
@@ -48,6 +54,15 @@ const TAGS = {
   },
 };
 const PROJECTS = [
+  {
+    title: "Middle School Math Platform",
+    description:
+      "An educational platform designed to teach mathematics at the middle school level. Features interactive exercises, step-by-step explanations, and progress tracking for secondary students. Powered by Clerk for secure user authentication and connected to a Turso database to persist user progress and submissions.",
+    link: "https://math.monteserin.dev",
+    github: "https://github.com/tcosCode/math-astro-webapp",
+    image: "/projects/fxCesar.webp",
+    tags: [TAGS.ASTRO, TAGS.HTML5, TAGS.CSS3, TAGS.JS],
+  },
   {
     title: "Responsive Layout Challenges",
     description:
